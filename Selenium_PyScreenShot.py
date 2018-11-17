@@ -1,0 +1,12 @@
+from selenium import webdriver
+print('Test Started.....')
+options = webdriver.ChromeOptions()
+options.add_argument('headless')
+browser = webdriver.Chrome(chrome_options=options)
+browser.maximize_window()
+browser.get('https://www.google.lk')
+browser.get_screenshot_as_file('screen_shot.png')
+browser.find_element_by_name("q").send_keys("Kushan Amarasiri")
+browser.get_screenshot_as_file('screen_shot2.png')
+browser.close()
+print('Test Ended.....')
